@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# IDE
+.idea/
+
+# macOS
+.DS_Store
+
+# Local docs / scratch
+starter_code/flow.html
