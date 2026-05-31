@@ -47,7 +47,7 @@ embeddings_model = OpenAIEmbeddings(
 )
 
 # Redis configuration
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6380/0")
+REDIS_URL = os.getenv("REDIS_CONNECTION_STRING")
 
 # Initialize Langfuse client
 langfuse = get_client()
@@ -181,7 +181,10 @@ def embed_documents(json_path: str):
 
     try:
         collection_name = "smartphones"
-        qdrant_client = QdrantClient("http://localhost:6333")
+        qdrant_client = QdrantClient(
+            url=os.getenv("QDRANT_URL"),
+            api_key=os.getenv("QDRANT_API_KEY")
+        )
 
         collection_exists = qdrant_client.collection_exists(collection_name=collection_name)
         if not collection_exists:
