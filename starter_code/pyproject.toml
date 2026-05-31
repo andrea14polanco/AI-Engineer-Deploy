@@ -19,6 +19,8 @@ dependencies = [
     "nemoguardrails>=0.22.0",
     "fastapi",
     "uvicorn>=0.48.0",
+    "gunicorn>=26.0.0",
+    "uvicorn-worker>=0.4.0",
 ]
 
 [dependency-groups]

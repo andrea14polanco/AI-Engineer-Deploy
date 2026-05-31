@@ -211,6 +211,8 @@ def embed_documents(json_path: str):
             qdrant_store = QdrantVectorStore.from_existing_collection(
                 embedding=embeddings_model,
                 collection_name=collection_name,
+                url=os.getenv("QDRANT_URL"),
+                api_key=os.getenv("QDRANT_API_KEY"),
             )
 
             return qdrant_store

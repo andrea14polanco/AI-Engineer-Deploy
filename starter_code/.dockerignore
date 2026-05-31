@@ -2,17 +2,14 @@
 __pycache__/
 *.py[cod]
 
-# Virtual environment directories (CRÍTICO — match en cualquier subcarpeta)
+# Virtual environment directories (CRÍTICO — incluir AMBOS nombres)
 venv/
 .venv/
-**/.venv/
-**/venv/
 
 # Environment / secrets — NUNCA al image
 .env
 *.env
 .env.*
-**/.env
 
 # Git
 .git/
@@ -26,12 +23,13 @@ venv/
 build/
 dist/
 
-
 # Logs
 *.log
 
 # Coverage reports
 *.coverage
+.coverage
+htmlcov/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
@@ -56,3 +54,7 @@ dist/
 
 # Documentation build directories
 docs/_build/
+
+# Dockerfile itself doesn't need to be in the image
+../Dockerfile
+.dockerignore
